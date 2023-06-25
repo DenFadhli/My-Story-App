@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.faltenreich.skeletonlayout.SkeletonLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.LoginFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_logo_login"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="32dp"
+            android:contentDescription="@string/sym_app"
+            android:src="@drawable/cam_logo"
+            app:layout_constraintBottom_toTopOf="@+id/tv_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:alpha="0"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/welcome"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/ed_login_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_logo_login" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/ed_login_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome"
+            tools:visibility="invisible" />
+
+        <com.submission.mystoryapp.ui.customview.MyEditText
+            android:id="@+id/ed_login_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:alpha="0"
+            android:background="@drawable/borderline"
+            android:drawableStart="@drawable/ic_baseline_email"
+            android:hint="@string/hint_email_login"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/ed_login_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_welcome" />
+
+        <com.submission.mystoryapp.ui.customview.MyEditText
+            android:id="@+id/ed_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:alpha="0"
+            android:background="@drawable/borderline"
+            android:drawableStart="@drawable/ic_baseline_lock"
+            android:hint="@string/hint_password_login"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ed_login_email"
+            app:passwordToggleEnabled="true" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="96dp"
+            android:alpha="0"
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ask_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="20dp"
+            android:alpha="0"
+            android:text="@string/isRegister"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/sign_up"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+        <TextView
+            android:id="@+id/sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="48dp"
+            android:alpha="0"
+            android:gravity="center_horizontal"
+            android:text="@string/signup"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ask_sign_up"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.faltenreich.skeletonlayout.SkeletonLayout>
